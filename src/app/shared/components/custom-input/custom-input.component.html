@@ -1,0 +1,7 @@
+<ion-item class="custom-input" lines="none">
+    <ion-icon color="secondary" *ngIf="icon" slot="start" [name]="icon"></ion-icon>
+    <ion-input [type]="type" [autocomplete]="autocomplete" [label]="label" [formControl]="control" [placeholder]="placeholder"></ion-input>
+    <ion-button *ngIf="isPassword" (click)="showOrhidePassword()" slot="end" fill="clear" shape="round">
+        <ion-icon color="secondary" slot="icon-only" [name]="hide ? 'eye' : 'eye-off'"></ion-icon>
+    </ion-button>
+</ion-item>

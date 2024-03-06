@@ -1,0 +1,68 @@
+<app-header title="PERFIL"></app-header>
+<ion-content [fullscreen]="true">
+    <div class="container">
+        <ion-icon name="person-circle-outline"></ion-icon>
+
+    </div>
+    <ion-title>
+        <h2>Info Acount</h2>
+    </ion-title>
+
+    <div class="lista">
+        <ion-list lines="none">
+            <ion-item>
+                <ion-icon color="secondary" aria-hidden="true" name="caret-forward-outline" slot="start"></ion-icon>
+                <ion-input label="Nombre" [value]="usuarioActivo?.nombre" [disabled]="!editMode" (input)="onNombreChange($event)"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-icon color="secondary" aria-hidden="true" name="caret-forward-outline" slot="start"></ion-icon>
+                <ion-input label="Apellido" [value]="usuarioActivo?.apellido" [disabled]="!editMode" (input)="onApellidoChange($event)"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-icon color="secondary" aria-hidden="true" name="mail" slot="start"></ion-icon>
+                <ion-input label="Email" [value]="usuarioActivo?.email" [disabled]="true"></ion-input>
+            </ion-item>
+        </ion-list>
+        <ion-button (click)="toggleEditMode()">{{ editMode ? 'CANCELAR' : 'EDITAR' }}</ion-button>
+        <ion-button (click)="saveChanges()" *ngIf="editMode">GUARDAR CAMBIOS</ion-button>
+        <ion-button (click)="logout()">LOGOUT</ion-button>
+    </div>
+
+    <!-- <div class="lista">
+        <ion-list lines="none">
+            <ion-item>
+                <ion-icon aria-hidden="true" name="caret-forward-outline" slot="start"></ion-icon>
+                <ion-input label="Nombre" [value]="usuarioActivo?.nombre" [disabled]="!editMode"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-icon aria-hidden="true" name="caret-forward-outline" slot="start"></ion-icon>
+                <ion-input label="Apellido" [value]="usuarioActivo?.apellido" [disabled]="!editMode"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-icon aria-hidden="true" name="mail" slot="start"></ion-icon>
+                <ion-input label="Email" [value]="usuarioActivo?.email" [disabled]="true"></ion-input>
+            </ion-item>
+        </ion-list>
+        <ion-button (click)="toggleEditMode()">{{ editMode ? 'CANCELAR' : 'EDITAR' }}</ion-button>
+        <ion-button (click)="logout()">LOGOUT</ion-button>
+    </div> -->
+
+    <!-- <div class="lista">
+        <ion-list lines="none">
+            <ion-item>
+                <ion-icon aria-hidden="true" name="caret-forward-outline" slot="start"></ion-icon>
+                <ion-input label="Nombre" [disabled]="true"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-icon aria-hidden="true" name="caret-forward-outline" slot="start"></ion-icon>
+                <ion-input label="Apellido" [disabled]="true"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-icon aria-hidden="true" name="mail" slot="start"></ion-icon>
+                <ion-input label="Email" [disabled]="true"></ion-input>
+            </ion-item>
+        </ion-list>
+        <ion-button>EDITAR</ion-button>
+        <ion-button>LOGOUT</ion-button>
+    </div> -->
+</ion-content>

@@ -1,0 +1,72 @@
+<app-header title="INICIO"></app-header>
+<ion-toolbar>
+    <ion-segment color="secondary" value="all" [(ngModel)]="segmentoSeleccionado">
+        <ion-segment-button value="programas">
+            <ion-label color="white">Programas</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="coaches">
+            <ion-label color="white">Coaches</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+</ion-toolbar>
+
+<ion-content>
+
+    <div *ngIf="segmentoSeleccionado === 'programas'">
+        <ion-title>Programas</ion-title>
+
+        <!-- Lista de programas -->
+        <!-- <ion-card [button]="true" href="/classpage"> -->
+        <ion-card class="clases" [button]="true" [routerLink]="['/classpage', 'Fuerza']">
+            <ion-img src="../../assets/img/a1.jpg" alt="Silhouette of mountains"></ion-img>
+            <ion-card-header>
+                <ion-card-title>Fuerza</ion-card-title>
+            </ion-card-header>
+        </ion-card>
+
+        <ion-card class="clases" [button]="true" [routerLink]="['/classpage', 'Crossfit']">
+            <ion-img src="../../assets/img/a4.jpg" alt="Silhouette of mountains"></ion-img>
+            <ion-card-header>
+                <ion-card-title>Crossfit</ion-card-title>
+            </ion-card-header>
+        </ion-card>
+
+        <ion-card class="clases" [button]="true" [routerLink]="['/classpage', 'Nutricion']">
+            <ion-img src="../../assets/img/a10.jpg" alt="Silhouette of mountains"></ion-img>
+            <ion-card-header>
+                <ion-card-title>Nutricion</ion-card-title>
+            </ion-card-header>
+        </ion-card>
+
+        <ion-card class="clases" [button]="true" [routerLink]="['/classpage', 'Cardio']">
+            <ion-img src="../../assets/img/a9.jpg" alt="Silhouette of mountains"></ion-img>
+            <ion-card-header>
+                <ion-card-title>Cardio</ion-card-title>
+            </ion-card-header>
+        </ion-card>
+
+        <ion-card class="clases" [button]="true" [routerLink]="['/classpage', 'Boxeo']">
+            <ion-img src="../../assets/img/a6.jpg" alt="Silhouette of mountains"></ion-img>
+            <ion-card-header>
+                <ion-card-title>Boxeo</ion-card-title>
+            </ion-card-header>
+        </ion-card>
+    </div>
+
+    <!-- Lista de coaches -->
+    <div *ngIf="segmentoSeleccionado === 'coaches'">
+        <ion-title>Coaches</ion-title>
+        <ion-card class="coach">
+            <ion-card-content class="coach">
+                <ion-list>
+                    <ion-item class="coach" *ngFor="let coach of listCoaches">
+                        <ion-label>
+                            <h2>{{ coach.nombre }}</h2>
+                            <p>Area: {{ coach.categoria }}</p>
+                        </ion-label>
+                    </ion-item>
+                </ion-list>
+            </ion-card-content>
+        </ion-card>
+    </div>
+</ion-content>

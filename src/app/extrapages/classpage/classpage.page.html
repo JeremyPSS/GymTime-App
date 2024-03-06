@@ -1,0 +1,17 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/tabs"></ion-back-button>
+        </ion-buttons>
+        <ion-title>CLASES</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-list lines="full">
+        <ng-container *ngFor="let clase of listClasses">
+            <app-pagecontent [tituloclase]="clase.titulo" [instructor]="clase.instructor" [duracion]="clase.duracion" [fecha]="clase.fecha" [hora]="clase.hora">
+            </app-pagecontent>
+        </ng-container>
+    </ion-list>
+</ion-content>

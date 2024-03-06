@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "gymtime-46e56": {
+      "hosting": {
+        "app": [
+          "gymtime-46e56"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "gymtime-46e56"
+  }
+}
